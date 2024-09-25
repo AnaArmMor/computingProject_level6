@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fife Musical Festival</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*HEADER*/
+
+        header {
+            background-image: url(img/homepage/Banner.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 355px;
+
+        }
+
+        body {
+            background-color: rgb(195, 231, 231);
+        }
+
+        h4,
+        h5 {
+            font-size: 18px;
+            margin: 25px;
+        }
+
+
+
+        /*NAV*/
+
+        .sidebar {
+            margin: 19px;
+            padding: 10px;
+            width: 140px;
+            position: absolute;
+            height: auto;
+            overflow: auto;
+            background-color: mediumturquoise;
+            border: 3px solid rgb(10, 29, 202);
+            border-radius: 5px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .sidebar a.active {
+            background-color: #494cf5;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #230885;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+        #customPrompt {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #content {
+            float: left;
+            max-width: 600px;
+            margin: 35px;
+            padding: 20px;
+            background-color: #70aed1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #030e4b;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #75b5c5;
+        }
+
+        #totalOutput {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /*FOOTER*/
+
+
+        .dunfermline {
+            clear: both;
+            display: grid;
+            grid-template-columns: 35% 35% 35%;
+            gap: 10px;
+            margin-top: 85px;
+            padding: 25px;
+            background-color: mediumturquoise;
+        }
+    </style>
+    <header>
+
+
+
+        <div class="sidebar">
+            <a href="homepageindex.html">Homepage</a>
+            <a class="active" href="informationindexpage.html">Information</a>
+            <a href="historyquizindex.html">Quiz</a>
+        </div>
+        <div class="content">
+
+        </div>
+
+    </header>
+    <main>
+        <div id="content">
+
+            <h1>Budget</h1>
+
+            <label>General admission amount: <input type="number" id="amount1"></label>
+            <label>Quantity: <input type="number" id="quantity1" value="1"></label>
+            <label>Single day pass amount: <input type="number" id="amount2"></label>
+            <label>Quantity: <input type="number" id="quantity2" value="1"></label>
+            <label>Multi-day pass amount: <input type="number" id="amount3"></label>
+            <label>Quantity: <input type="number" id="quantity3" value="1"></label>
+            <label>Early bird discount amount: <input type="number" id="amount4"></label>
+            <label>Quantity: <input type="number" id="quantity4" value="1"></label>
+            <label>Hot food amount: <input type="number" id="amount5"></label>
+            <label>Quantity: <input type="number" id="quantity5" value="1"></label>
+            <label>Drinks amount: <input type="number" id="amount6"></label>
+            <label>Quantity: <input type="number" id="quantity6" value="1"></label>
+            <label>Attractions amount: <input type="number" id="amount7"></label>
+            <label>Quantity: <input type="number" id="quantity7" value="1"></label>
+            <label>Merchandising amount: <input type="number" id="amount8"></label>
+            <label>Quantity: <input type="number" id="quantity8" value="1"></label>
+
+
+            <button onclick="calculateTotal()">Calculate Total</button>
+            <button onclick="resetTotal()">Reset Total</button>
+            <div id="totalOutput">Estimated spend: £0.00</div>
+        </div>
+        <div>
+            <h4>Price list</h4>
+            <p>
+                General admission amount: £10 <br>
+                Single day pass amount: £10 <br>
+                Multi-day pass amount: £18 <br>
+                Early bird discount amount: £15 <br>
+                Hot food amount: Meal Deals £8 <br>
+                Drinks amount: Beer £5 - Cider £3.50 <br>
+                Attractions amount: 1 ticket £2.50 - 3 tickets £6.20 <br>
+                Merchandising amount: Cups £8 - Mug £4.50 - Poster £3.25 - T-shirt £15 <br>
+            </p>
+        </div>
+    </main>
+    <script>
+        window.alert("Hey, Would you like to estimate how much of each item you think you might buy each day?");
+
+        function showCustomPrompt() {
+            document.getElementById('customPrompt').style.display = 'block';
+        }
+
+
+
+        function closeCustomPrompt() {
+            document.getElementById('customPrompt').style.display = 'none';
+        }
+
+
+        showCustomPrompt();
+
+        function calculateTotal() {
+            var amount1 = parseFloat(document.getElementById("amount1").value) || 0;
+            var quantity1 = parseFloat(document.getElementById("quantity1").value) || 1;
+            var amount2 = parseFloat(document.getElementById("amount2").value) || 0;
+            var quantity2 = parseFloat(document.getElementById("quantity2").value) || 1;
+            var amount3 = parseFloat(document.getElementById("amount3").value) || 0;
+            var quantity3 = parseFloat(document.getElementById("quantity3").value) || 1;
+            var amount4 = parseFloat(document.getElementById("amount4").value) || 0;
+            var quantity4 = parseFloat(document.getElementById("quantity4").value) || 1;
+            var amount5 = parseFloat(document.getElementById("amount5").value) || 0;
+            var quantity5 = parseFloat(document.getElementById("quantity5").value) || 1;
+            var amount6 = parseFloat(document.getElementById("amount6").value) || 0;
+            var quantity6 = parseFloat(document.getElementById("quantity6").value) || 1;
+            var amount7 = parseFloat(document.getElementById("amount7").value) || 0;
+            var quantity7 = parseFloat(document.getElementById("quantity7").value) || 1;
+            var amount8 = parseFloat(document.getElementById("amount7").value) || 0;
+            var quantity8 = parseFloat(document.getElementById("quantity7").value) || 1;
+
+
+
+            var total = (amount1 * quantity1) + (amount2 * quantity2) + (amount3 * quantity3) + (amount4 * quantity4) + (amount5 * quantity5) + (amount6 * quantity6) + (amount7 * quantity7) + (amount8 * quantity8);
+
+            // Repeat the above line for each item (amount * quantity)
+
+            document.getElementById("totalOutput").innerHTML = "Total: £" + total.toFixed(2);
+        }
+
+        function resetTotal() {
+            document.getElementById("totalOutput").innerHTML = "Total: £0.00";
+        }
+
+        // Add event listeners to call updateTotal whenever quantity is changed
+        document.getElementById("quantity1").addEventListener("input", calculateTotal);
+        // Repeat the above line for each item (quantity)
+    </script>
+    <footer>
+        <div class="dunfermline">
+            <div>
+                <h4>About Dunfermline</h4>
+                <img src="img/homepage/Map.jpg" alt="map" width="385" height="276">
+            </div>
+            <div>
+                <h4>History</h4>
+                <p>Dunfermline Musical Festival is a vibrant celebration of music that brings together local talent and
+                    renowned artists in a harmonious fusion. Nestled in the heart of Dunfermline, this annual event
+                    showcases a diverse range of musical genres, from classical and jazz to contemporary and folk.
+
+                    With a rich history, the Dunfermline Musical Festival has become a cultural highlight, attracting
+                    music
+                    enthusiasts from near and far. The festival provides a platform for emerging artists to share the
+                    stage
+                    with established performers, fostering a sense of community and musical discovery.
+
+                    From enchanting solo performances to electrifying ensemble acts, the festival caters to varied
+                    tastes
+                    and preferences. Attendees can immerse themselves in the melodic tapestry created by passionate
+                    musicians, creating lasting memories against the backdrop of Dunfermline's scenic charm.
+
+                    Beyond the music, the festival often features workshops, interactive sessions, and opportunities for
+                    aspiring musicians to learn and connect. The Dunfermline Musical Festival is not just an event; it's
+                    a
+                    harmonious celebration that resonates with the spirit of artistic expression, uniting people through
+                    the
+                    universal language of music.</p> <br>
+                <a href="https://en.wikipedia.org/wiki/Dunfermline">More about Dunfermline. Click here!</a>
+            </div>
+            <div style="margin-left: 255px;">
+                <div>
+                    <h3 style="margin-bottom: 25px;">Quiz</h3>
+                    <button type="button"><a href="historyQuiz.html">Click here!</a></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

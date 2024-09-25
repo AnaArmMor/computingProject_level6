@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fife Musical Festival</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        function showGreeting() {
+            let getName = prompt("Hello! Welcome to Fife Musical Festival", "Enter your name");
+
+            let today = new Date();
+            let hour = today.getHours();
+
+            let greetingMessage = "";
+
+            if (hour >= 6 && hour < 12) {
+                greetingMessage = "morning";
+            } else if (hour >= 12 && hour < 17) {
+                greetingMessage = "afternoon";
+            } else {
+                greetingMessage = "evening";
+            }
+            alert("Good " + greetingMessage + ", " + getName + "!")
+        }
+
+        showGreeting();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*HEADER*/
+
+        header {
+            background-image: url(img/homepage/Banner.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 355px;
+        }
+
+        body {
+            background-color: rgb(195, 231, 231);
+        }
+
+        h4,
+        h5 {
+            font-size: 18px;
+            margin: 25px;
+        }
+
+
+
+        /*NAV*/
+
+        .sidebar {
+            margin: 19px;
+            padding: 10px;
+            width: 140px;
+            position: absolute;
+            height: auto;
+            overflow: auto;
+            background-color: mediumturquoise;
+            border: 3px solid rgb(10, 29, 202);
+            border-radius: 5px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .sidebar a.active {
+            background-color: #494cf5;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #230885;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+        /*MAIN*/
+
+
+        .flex-container {
+            display: flex;
+
+        }
+
+        .flex-container>div {
+
+            margin: 15px;
+            margin-right: 55px;
+            font-size: 15px;
+        }
+
+        .expo {
+            letter-spacing: 3px;
+            line-height: 25px;
+            text-align: justify;
+            clear: both;
+            width: 855px;
+            font-size: 55px;
+        }
+
+        .grid-container {
+
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            gap: 65px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .grid-container>div>img {
+            border: 8px solid rgb(34, 22, 194);
+            border-radius: 25px;
+        }
+
+        .jump {
+            margin-top: 55px;
+
+        }
+
+        .clearfix {
+
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container {
+            margin-top: 85px;
+        }
+
+        .container video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .dunfermline {
+            display: grid;
+            grid-template-columns: 35% 35% 35%;
+            gap: 10px;
+            margin-top: 85px;
+            padding: 25px;
+            background-color: mediumturquoise;
+        }
+    </style>
+    <header>
+
+
+        <div class="sidebar">
+            <a class="active" href="informationindexpage.html">Information</a>
+            <a href="historyquizindex.html">Quiz</a>
+            <a href="budgetindex.html">Budget</a>
+        </div>
+        <div class="content">
+
+        </div>
+
+    </header>
+    <main>
+        <section>
+            <div class="flex-container">
+                <div>
+                    <h5>Welcome to Fife Musical festival</h5>
+                </div>
+                <div class="expo">
+                    <p>
+                        A vibrant kaleidoscope of sound and color, a music festival is a
+                        celebration of music that transcends
+                        genres and embraces diversity. Thousands of music enthusiasts gather in a lively atmosphere,
+                        surrounded
+                        by stages adorned with dazzling lights and pulsating beats. From the rhythmic sway of the crowd
+                        to
+                        the
+                        eclectic lineup of artists, it's a sensory feast that creates lasting memories. Festival-goers
+                        immerse
+                        themselves in a melting pot of musical experiences, forging connections with both the performers
+                        and
+                        fellow revelers. It's an unforgettable journey where the language of music unites people from
+                        all
+                        walks
+                        of life.
+                    </p>
+                </div>
+            </div>
+            <h4>Plan your visit</h4>
+
+            <div class="grid-container">
+                <div><img src="img/homepage/pexelsjohanneshavn2417726.jpg" alt="" width="355" height="206"></div>
+                <div><img src="img/homepage/pexelsmartinlopez2240763.jpg" alt="" width="225" height="206"></div>
+                <div><img src="img/homepage/pexelspeterspencer1317365.jpg" alt="" width="355" height="206"></div>
+                <div><img src="img/homepage/pexelstomfisk1692695.jpg" alt="" width="225" height="206"></div>
+                <div><img src="img/homepage/pexelswendywei1190297.jpg" alt="" width="355" height="206"></div>
+                <div><img src="img/homepage/pexelswendywei1540406.jpg" alt="" width="225" height="206"></div>
+            </div>
+            <div>
+                <a href="information.html">What to do</a>
+            </div>
+            <div class="jump">
+                <a href="information.html">What to see</a>
+            </div>
+            <div class="clearfix"></div>
+
+        </section>
+        <section class="container">
+            <div>
+                <video width="820" height="440" controls>
+                    <source src="video/pexelsvideos2022395 (1080p).mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="dunfermline">
+            <div>
+                <h4>About Dunfermline</h4>
+                <img src="img/homepage/Map.jpg" alt="map" width="385" height="276">
+            </div>
+            <div>
+                <h4>History</h4>
+                <p>Dunfermline Musical Festival is a vibrant celebration of music that brings together local talent and
+                    renowned artists in a harmonious fusion. Nestled in the heart of Dunfermline, this annual event
+                    showcases a diverse range of musical genres, from classical and jazz to contemporary and folk.
+
+                    With a rich history, the Dunfermline Musical Festival has become a cultural highlight, attracting
+                    music
+                    enthusiasts from near and far. The festival provides a platform for emerging artists to share the
+                    stage
+                    with established performers, fostering a sense of community and musical discovery.
+
+                    From enchanting solo performances to electrifying ensemble acts, the festival caters to varied
+                    tastes
+                    and preferences. Attendees can immerse themselves in the melodic tapestry created by passionate
+                    musicians, creating lasting memories against the backdrop of Dunfermline's scenic charm.
+
+                    Beyond the music, the festival often features workshops, interactive sessions, and opportunities for
+                    aspiring musicians to learn and connect. The Dunfermline Musical Festival is not just an event; it's
+                    a
+                    harmonious celebration that resonates with the spirit of artistic expression, uniting people through
+                    the
+                    universal language of music.</p> <br>
+                <a href="https://en.wikipedia.org/wiki/Dunfermline">More about Dunfermline. Click here!</a>
+            </div>
+            <div style="margin-left: 255px;">
+                <div>
+                    <h3 style="margin-bottom: 25px;">Quiz</h3>
+                    <button type="button"><a href="historyQuiz.html">Click here!</a></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Fife Musical Festival</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*HEADER*/
+
+        header {
+            background-image: url(img/homepage/Banner.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 355px;
+        }
+
+        body {
+            background-color: rgb(195, 231, 231);
+        }
+
+        h4,
+        h5 {
+            font-size: 18px;
+            margin: 25px;
+        }
+
+
+
+        /*NAV*/
+
+        .sidebar {
+            margin: 19px;
+            padding: 10px;
+            width: 140px;
+            position: absolute;
+            height: auto;
+            overflow: auto;
+            background-color: mediumturquoise;
+            border: 3px solid rgb(10, 29, 202);
+            border-radius: 5px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .sidebar a.active {
+            background-color: #494cf5;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #230885;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+        /*MAIN*/
+        #answer {
+            padding-top: 12px;
+            font-size: 20px;
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+
+        }
+
+        .flex-container {
+            display: flex;
+
+        }
+
+        .flex-container>div {
+
+            margin: 15px;
+            margin-right: 55px;
+            font-size: 15px;
+        }
+
+        .expo {
+            letter-spacing: 3px;
+            line-height: 25px;
+            text-align: justify;
+            clear: both;
+            width: 855px;
+            font-size: 55px;
+        }
+
+        .grid-container {
+
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            gap: 65px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .grid-container>div>img {
+            border: 8px solid rgb(34, 22, 194);
+            border-radius: 25px;
+        }
+
+        .clearfix {
+
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .dunfermline {
+            display: grid;
+            grid-template-columns: 35% 35% 35%;
+            gap: 10px;
+            margin-top: 85px;
+            padding: 25px;
+            background-color: mediumturquoise;
+        }
+    </style>
+    <header>
+
+
+        <div class="sidebar">
+            <a class="active" href="homepageindex.html">Homepage</a>
+            <a href="historyquizindex.html">Quiz</a>
+            <a href="budgetindex.html">Budget</a>
+        </div>
+        <div class="content">
+
+        </div>
+
+    </header>
+    <main>
+        <section>
+            <h3 style="margin: 55px;  border: 2px solid black; box-shadow: inset; text-align: center;">What to do</h3>
+            <div class="grid-container">
+                <div>
+                    <img src="img/hotFood/pexelspragyanbezbaruah2010701.jpg" alt="" width="255px" height="125px">
+                    <h4>Hot food</h4>
+                    <p>Enjoy hot food on the lively music festival trails. From spicy street tacos to sizzling kebabs,
+                        fish and chips and so much more. Don't forget to try our local, delicious and seasonal products.
+                    </p>
+                </div>
+                <div>
+                    <img src="img/attractions/pexelsangelaroma7319111.png" alt="" width="255px" height="125px">
+                    <h4>Merchandaise</h4>
+                    <p>Did you know that the festival sells its own products to raise money for organizations in our
+                        city and Dunfermline. Visit our sales stand and collaborate with them.</p>
+                </div>
+                <div>
+                    <img src="img/attractions/pexelsmihaivlasceanucarrousel.jpg" alt="" width="255px" height="125px">
+                    <h4>Fairground rides</h4>
+                    <p>Look at this carousel, it looks fun. The laughter of festival goers mixes with the screams of joy
+                        of those who spin in the air on exciting rides, don't miss it.</p>
+                </div>
+                <div>
+                    <img src="img/attractions/hauntedHouse.png" alt="" width="255px" height="125px">
+                    <h4>Haunted house</h4>
+                    <p>You have been very scared...that mysterious facade hides a world of chilling emotions and
+                        disturbing surprises. The haunted house attracts those seeking a different type of adrenaline: a
+                        disturbing melody that causes chills.</p>
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <section>
+            <h3 style="margin: 55px; border: 2px solid black; box-shadow: inset; text-align: center;">What to see</h3>
+            <div class="grid-container">
+                <div>
+                    <img src="img/localBrands/pexelspixabay210922.jpg" alt="" width="255px" height="125px">
+                    <h4>Peter Bran</h4>
+                    <p>Originating from the heart of the city, The Echo Groove Collective is a fusion powerhouse.
+                        Combining jazz, funk and a touch of electronic elements, his music is a sonic journey that
+                        transcends genres. Known for their energetic live performances, they have become local
+                        favorites, turning every venue into a dance floor.</p>
+                </div>
+                <div>
+                    <img src="img/localBrands/pexelsfransa2336840.jpg" alt="" width="255px" height="125px">
+                    <h4>Rosie Roster</h4>
+                    <p>This hip-hop collective is a force to be reckoned with, tackling social issues with sharp lyrics
+                        and infectious beats. From local graffiti artists to dancers, their shows are a celebration of
+                        urban culture, breaking down barriers and giving a voice to the streets.</p>
+                </div>
+                <div>
+                    <img src="img/localBrands/pexelspixabay258732.jpg" alt="" width="255px" height="125px">
+                    <h4>Sound Group</h4>
+                    <p>Deep in the suburbs, nestled in nature, the Mystic Harmonies tribe creates a soundscape that
+                        transcends reality. Their music is a fusion of world instruments, ambient textures and ethereal
+                        voices. Infused with a spiritual essence, attending their performances feels like entering a
+                        mystical realm, where time slows down and the audience is transported to a dreamlike sta</p>
+                </div>
+                <div>
+                    <img src="img/localBrands/pexelspixabay417473.jpg" alt="" width="255px" height="125px">
+                    <h4>Miscelaneous music</h4>
+                    <p>This unique duo mixes Celtic music and country music to create songs that delight all those who
+                        want to participate in a good music session. Vibrant strings and varied vocal tones flow in
+                        creating Earth sounds.</p>
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+    </main>
+    <footer>
+        <div class="dunfermline">
+            <div>
+                <h4>About Dunfermline</h4>
+                <img src="img/homepage/Map.jpg" alt="map" width="385" height="276">
+            </div>
+            <div>
+                <h4>History</h4>
+                <p>Dunfermline Musical Festival is a vibrant celebration of music that brings together local talent and
+                    renowned artists in a harmonious fusion. Nestled in the heart of Dunfermline, this annual event
+                    showcases a diverse range of musical genres, from classical and jazz to contemporary and folk.
+
+                    With a rich history, the Dunfermline Musical Festival has become a cultural highlight, attracting
+                    music
+                    enthusiasts from near and far. The festival provides a platform for emerging artists to share the
+                    stage
+                    with established performers, fostering a sense of community and musical discovery.
+
+                    From enchanting solo performances to electrifying ensemble acts, the festival caters to varied
+                    tastes
+                    and preferences. Attendees can immerse themselves in the melodic tapestry created by passionate
+                    musicians, creating lasting memories against the backdrop of Dunfermline's scenic charm.
+
+                    Beyond the music, the festival often features workshops, interactive sessions, and opportunities for
+                    aspiring musicians to learn and connect. The Dunfermline Musical Festival is not just an event; it's
+                    a
+                    harmonious celebration that resonates with the spirit of artistic expression, uniting people through
+                    the
+                    universal language of music.</p> <br>
+                <a href="https://en.wikipedia.org/wiki/Dunfermline">More about Dunfermline. Click here!</a>
+            </div>
+            <div style="margin-left: 255px;">
+                <div>
+                    <h3 style="margin-bottom: 25px;">Quiz</h3>
+                    <button type="button"><a href="historyQuiz.html">Click here!</a></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

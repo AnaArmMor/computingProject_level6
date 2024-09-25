@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fife Musical Festival</title>
+</head>
+
+<body>
+    <script>
+        function startQuiz() {
+            var correctAnswers = ["historical", "fife", "robert the bruce", "dunfermline abbey", "andrew carnegie", "forth"];
+            var score = 0;
+
+            for (var i = 0; i < correctAnswers.length; i++) {
+                var userAnswer = document.getElementById("answer" + i).value.toLowerCase();
+
+                if (userAnswer === correctAnswers[i]) {
+                    score += 2;
+                }
+            }
+
+            document.getElementById("scoreOutput").innerHTML = "Your total score is: " + score + " points";
+        }
+
+        function resetQuiz() {
+            for (var i = 0; i < correctAnswers.length; i++) {
+                document.getElementById("answer" + i).value = "";
+            }
+
+            document.getElementById("scoreOutput").innerHTML = "";
+        }
+        var correctAnswers = ["historical", "fife", "robert the bruce", "dunfermline abbey", "andrew carnegie", "forth"];
+        var score = 0;
+
+        function submitQuiz() {
+            score = 0;
+
+            for (var i = 0; i < correctAnswers.length; i++) {
+                var userAnswer = document.getElementById("answer" + i).value.toLowerCase();
+
+                if (userAnswer === correctAnswers[i]) {
+                    score += 2;
+                }
+            }
+
+            document.getElementById("scoreOutput").innerHTML = "Your total score is: " + score + " points";
+        }
+
+        function resetQuiz() {
+            for (var i = 0; i < correctAnswers.length; i++) {
+                document.getElementById("answer" + i).value = "";
+            }
+
+            document.getElementById("scoreOutput").innerHTML = "";
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*HEADER*/
+
+        header {
+            background-image: url(img/homepage/Banner.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 355px;
+            margin-bottom: 25px;
+        }
+
+        body {
+            background-color: rgb(195, 231, 231);
+        }
+
+        h4,
+        h5 {
+            font-size: 18px;
+            margin: 25px;
+        }
+
+
+
+        /*NAV*/
+
+        .sidebar {
+            margin: 19px;
+            padding: 10px;
+            width: 140px;
+            position: absolute;
+            height: auto;
+            overflow: auto;
+            background-color: mediumturquoise;
+            border: 3px solid rgb(10, 29, 202);
+            border-radius: 5px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .sidebar a.active {
+            background-color: #494cf5;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #230885;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+        /*MAIN*/
+        #answer {
+            padding-top: 12px;
+            font-size: 20px;
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+
+        }
+
+        #quizContainer {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        button {
+
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #scoreOutput {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*FOOTER*/
+
+        .dunfermline {
+            display: grid;
+            grid-template-columns: 35% 35% 35%;
+            gap: 10px;
+            margin-top: 85px;
+            padding: 25px;
+            background-color: mediumturquoise;
+        }
+    </style>
+    <header>
+
+
+        <div class="sidebar">
+            <a href="homepageindex.html">Homepage</a>
+            <a class="active" href="informationindexpage.html">Information</a>
+            <a href="budgetindex.html">Budget</a>
+        </div>
+        <div class="content">
+
+        </div>
+
+    </header>
+    <main>
+
+        <div id="quizContainer">
+            <h1 style="margin: 15px;">Scottish Quiz</h1>
+
+            <img src="img/quiz/quiz1.png" alt="" width="507" height="292" style="margin-bottom: 5px;">
+            <input type="text" id="answer0" placeholder="Your answer...">
+            <img src="img/quiz/quiz2.png" alt="" width="507" height="292">
+            <input type="text" id="answer1" placeholder="Your answer...">
+            <img src="img/quiz/quiz3.png" alt="" width="507" height="292">
+            <input type="text" id="answer2" placeholder="Your answer...">
+            <img src="img/quiz/quiz4.png" alt="" width="507" height="292">
+            <input type="text" id="answer3" placeholder="Your answer...">
+            <img src="img/quiz/quiz5.png" alt="" width="507" height="292">
+            <input type="text" id="answer4" placeholder="Your answer...">
+            <img src="img/quiz/quiz6.png" alt="" width="507" height="292">
+            <input type="text" id="answer5" placeholder="Your answer...">
+
+            <!-- Add more questions and input fields as needed -->
+
+            <button onclick="startQuiz()">Submit Answers</button>
+            <button onclick="resetQuiz()">Reset Quiz</button>
+
+            <div id="scoreOutput"></div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="dunfermline">
+            <div>
+                <h4>About Dunfermline</h4>
+                <img src="img/homepage/Map.jpg" alt="map" width="385" height="276">
+            </div>
+            <div>
+                <h4>History</h4>
+                <p>Dunfermline Musical Festival is a vibrant celebration of music that brings together local talent and
+                    renowned artists in a harmonious fusion. Nestled in the heart of Dunfermline, this annual event
+                    showcases a diverse range of musical genres, from classical and jazz to contemporary and folk.
+
+                    With a rich history, the Dunfermline Musical Festival has become a cultural highlight, attracting
+                    music
+                    enthusiasts from near and far. The festival provides a platform for emerging artists to share the
+                    stage
+                    with established performers, fostering a sense of community and musical discovery.
+
+                    From enchanting solo performances to electrifying ensemble acts, the festival caters to varied
+                    tastes
+                    and preferences. Attendees can immerse themselves in the melodic tapestry created by passionate
+                    musicians, creating lasting memories against the backdrop of Dunfermline's scenic charm.
+
+                    Beyond the music, the festival often features workshops, interactive sessions, and opportunities for
+                    aspiring musicians to learn and connect. The Dunfermline Musical Festival is not just an event; it's
+                    a
+                    harmonious celebration that resonates with the spirit of artistic expression, uniting people through
+                    the
+                    universal language of music.</p> <br>
+                <a href="https://en.wikipedia.org/wiki/Dunfermline">More about Dunfermline. Click here!</a>
+            </div>
+            <div style="margin-left: 255px;">
+                <div>
+                    <a href="#aumentar-letra">To the top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
